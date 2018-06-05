@@ -20,27 +20,27 @@
 
     <body>
         <ul>
-            <li><img src="Puzzle-Parts/2.jpg" id="1" onclick="swapImg(id)"></img></li>
-            <li><img src="Puzzle-Parts/5.jpg" id="2" onclick="swapImg(id)"></img></li>
-            <li><img src="Puzzle-Parts/9.jpg" id="3" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/2.jpg" id="1" onclick="swapImg(1)"></img></li>
+            <li><img src="Puzzle-Parts/5.jpg" id="2" onclick="swapImg(2)"></img></li>
+            <li><img src="Puzzle-Parts/9.jpg" id="3" onclick="swapImg(3)"></img></li>
 
-            <li><img src="Puzzle-Parts/8.jpg" id="4" onclick="swapImg(id)"></img></li>
-            <li><img src="Puzzle-Parts/1.jpg" id="5" onclick="swapImg(id)"></img></li>
-            <li><img src="Puzzle-Parts/6.jpg" id="6" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/8.jpg" id="4" onclick="swapImg(4)"></img></li>
+            <li><img src="Puzzle-Parts/1.jpg" id="5" onclick="swapImg(5)"></img></li>
+            <li><img src="Puzzle-Parts/6.jpg" id="6" onclick="swapImg(6)"></img></li>
 
-            <li><img src="Puzzle-Parts/4.jpg" id="7" onclick="swapImg(id)"></img></li>
-            <li><img src="Puzzle-Parts/3.jpg" id="8" onclick="swapImg(id)"></img></li>
-            <li><img src="Puzzle-Parts/7.jpg" id="9" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/4.jpg" id="7" onclick="swapImg(7)"></img></li>
+            <li><img src="Puzzle-Parts/3.jpg" id="8" onclick="swapImg(8)"></img></li>
+            <li><img src="Puzzle-Parts/7.jpg" id="9" onclick="swapImg(9)"></img></li>
         </ul>
         <script>
             let counter = 0;
             let firstImg = {
-                id1 = 0,
-                src1 = "ddz"
+                id1:"0",
+                src1:"ddz"
             };
             let secondImg = {
-                id2 = 0,
-                src2 = "ddz"
+                id2:"0",
+                src2:"ddz"
             };
             let transVar;
             let listItems = document.getElementsByTagName('li');
