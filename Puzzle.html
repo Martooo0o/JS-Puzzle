@@ -20,38 +20,47 @@
 
     <body>
         <ul>
-            <li><img src="Puzzle Parts/2.jpg" class='part' id="1" onclick="swapImg(a)"></img></li>
-            <li><img src="Puzzle Parts/5.jpg" class='part' id="2" onclick="swapImg(a)"></img></li>
-            <li><img src="Puzzle Parts/9.jpg" class='part' id="3" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle-Parts/2.jpg" id="1" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/5.jpg" id="2" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/9.jpg" id="3" onclick="swapImg(id)"></img></li>
 
-            <li><img src="Puzzle Parts/8.jpg" class='part' id="4" onclick="swapImg(a)"></img></li>
-            <li><img src="Puzzle Parts/1.jpg" class='part' id="5" onclick="swapImg(a)"></img></li>
-            <li><img src="Puzzle Parts/6.jpg" class='part' id="6" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle-Parts/8.jpg" id="4" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/1.jpg" id="5" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/6.jpg" id="6" onclick="swapImg(id)"></img></li>
 
-            <li><img src="Puzzle Parts/4.jpg" class='part' id="7" onclick="swapImg(a)"></img></li>
-            <li><img src="Puzzle Parts/3.jpg" class='part' id="8" onclick="swapImg(a)"></img></li>
-            <li><img src="Puzzle Parts/7.jpg" class='part' id="9" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle-Parts/4.jpg" id="7" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/3.jpg" id="8" onclick="swapImg(id)"></img></li>
+            <li><img src="Puzzle-Parts/7.jpg" id="9" onclick="swapImg(id)"></img></li>
         </ul>
-         <p>Testing some stuff</p>
         <script>
-            var swap = "";
-            var num;
-            var counter = 0;
+            let counter = 0;
+            let firstImg = {
+                id1 = 0,
+                src1 = "ddz"
+            };
+            let secondImg = {
+                id2 = 0,
+                src2 = "ddz"
+            };
+            let transVar;
+            let listItems = document.getElementsByTagName('li');
             function swapImg(a)
             {
                 if(counter==0)
                 {
-                    swap = document.getElementById(a).src;
-                    num = document.getElementById(a).id;
+                    firstImg.id1 = a;
+                    firstImg.src1 = listItems[firstImg.id1-1].src;
                     counter++;
                 }
+                
+                else{
+                    secondImg.id2 = a;
+                    secondImg.src2 = listItems[secondImg.id2-1].src;
 
-                if(counter==1)
-                {
-                    document.getElementById(a).src=swap;
-                    document.getElementById(num).src = document.getElementById(a);
-                    swap="";
-                    counter=0;
+                    transVar = firstImg.src;
+                    document.getElementById(firstImg.id1).src = secondImg.src2;
+                    document.getElementById(secondImg.id2).src = transVar; 
+                    counter = 0;
                 }
             }
         </script>
