@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            ul{
+                list-style-type: none;
+            }
+            li{
+                padding:0;
+                margin:0;
+                float:left;
+            }
+            li img{
+                width:200px;
+            }
+            li:nth-child(3n+1){
+                clear:left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul>
+            <li><img src="Puzzle Parts/2.jpg" class='part' id="1" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle Parts/5.jpg" class='part' id="2" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle Parts/9.jpg" class='part' id="3" onclick="swapImg(a)"></img></li>
+
+            <li><img src="Puzzle Parts/8.jpg" class='part' id="4" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle Parts/1.jpg" class='part' id="5" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle Parts/6.jpg" class='part' id="6" onclick="swapImg(a)"></img></li>
+
+            <li><img src="Puzzle Parts/4.jpg" class='part' id="7" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle Parts/3.jpg" class='part' id="8" onclick="swapImg(a)"></img></li>
+            <li><img src="Puzzle Parts/7.jpg" class='part' id="9" onclick="swapImg(a)"></img></li>
+        </ul>
+        
+        <script>
+            var swap = "";
+            var num;
+            var counter = 0;
+            function swapImg(a)
+            {
+                if(counter==0)
+                {
+                    swap = document.getElementById(a).src;
+                    num = document.getElementById(a).id;
+                    counter++;
+                }
+
+                if(counter==1)
+                {
+                    document.getElementById(a).src=swap;
+                    document.getElementById(num).src = document.getElementById(a);
+                    swap="";
+                    counter=0;
+                }
+            }
+        </script>
+    </body>
+</html>
