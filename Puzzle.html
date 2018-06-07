@@ -1,16 +1,39 @@
 <html>
     <head>
         <style>
+            #Text1, #Text2{
+                width:50%;
+                float:left;          
+            }
+            h2{
+                text-align: center;
+            }
+            #Puzzle, #Original{
+                display:block;
+                width:612px;
+                height:349.09px;
+                margin:10px;
+                padding:0px;
+                background: black;
+                border:5px solid purple;
+                float:left;
+            }
             ul{
                 list-style-type: none;
+
+                margin:0;
+                padding:0;
             }
             li{
-                padding:0;
-                margin:0;
+                width:200px;
+                height: 112.36px;
+                padding:0px;
+                margin:2px;
                 float:left;
             }
             li img{
                 width:200px;
+                height: 112.36px;
             }
             li:nth-child(3n+1){
                 clear:left;
@@ -19,19 +42,30 @@
     </head>
 
     <body>
-        <ul>
-            <li><img src="Puzzle-Parts/2.jpg" id="1" onclick="swapImg(1)"></img></li>
-            <li><img src="Puzzle-Parts/5.jpg" id="2" onclick="swapImg(2)"></img></li>
-            <li><img src="Puzzle-Parts/9.jpg" id="3" onclick="swapImg(3)"></img></li>
+        <div id="Text1">
+            <h2>Puzzle</h2>
+        </div>
+        <div id="Text2">
+                <h2>Original</h2>
+            </div>
+        <div id="Puzzle">
+            <ul>
+                <li><img src="Puzzle-Parts/2.jpg" id="1" onclick="swapImg(1)"></img></li>
+                <li><img src="Puzzle-Parts/5.jpg" id="2" onclick="swapImg(2)"></img></li>
+                <li><img src="Puzzle-Parts/9.jpg" id="3" onclick="swapImg(3)"></img></li>
 
-            <li><img src="Puzzle-Parts/8.jpg" id="4" onclick="swapImg(4)"></img></li>
-            <li><img src="Puzzle-Parts/1.jpg" id="5" onclick="swapImg(5)"></img></li>
-            <li><img src="Puzzle-Parts/6.jpg" id="6" onclick="swapImg(6)"></img></li>
+                <li><img src="Puzzle-Parts/8.jpg" id="4" onclick="swapImg(4)"></img></li>
+                <li><img src="Puzzle-Parts/1.jpg" id="5" onclick="swapImg(5)"></img></li>
+                <li><img src="Puzzle-Parts/6.jpg" id="6" onclick="swapImg(6)"></img></li>
 
-            <li><img src="Puzzle-Parts/4.jpg" id="7" onclick="swapImg(7)"></img></li>
-            <li><img src="Puzzle-Parts/3.jpg" id="8" onclick="swapImg(8)"></img></li>
-            <li><img src="Puzzle-Parts/7.jpg" id="9" onclick="swapImg(9)"></img></li>
-        </ul>
+                <li><img src="Puzzle-Parts/4.jpg" id="7" onclick="swapImg(7)"></img></li>
+                <li><img src="Puzzle-Parts/3.jpg" id="8" onclick="swapImg(8)"></img></li>
+                <li><img src="Puzzle-Parts/7.jpg" id="9" onclick="swapImg(9)"></img></li>
+            </ul>
+        </div>
+
+
+        <div id="Original"></div>
         <script>
             let counter = 0; // checkes if the selected img is the first one or the second one 
             let firstImg = {
@@ -49,6 +83,11 @@
                 {
                     firstImg.id1 = a;
                     firstImg.src1 = document.getElementById(a).src;
+
+                    //Marking the selected img with a border
+                    document.getElementById(a).style.border = "3px solid red";
+                    document.getElementById(a).style.width = "194px";
+                    document.getElementById(a).style.height = "106.36px";
                     counter++;
                 }
                 
@@ -57,6 +96,13 @@
                     secondImg.src2 = document.getElementById(a).src;
 
                     transVar = firstImg.src1;
+
+                    //Bringing the style back to normal
+                    document.getElementById(firstImg.id1).style.border = "none";
+                    document.getElementById(firstImg.id1).style.width = "200px";
+                    document.getElementById(firstImg.id1).style.height = "112.36px";
+                    
+                    //Swaping the 2 images
                     document.getElementById(firstImg.id1).src = secondImg.src2;
                     document.getElementById(secondImg.id2).src = transVar; 
                     counter = 0;
