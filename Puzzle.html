@@ -33,7 +33,7 @@
             <li><img src="Puzzle-Parts/7.jpg" id="9" onclick="swapImg(9)"></img></li>
         </ul>
         <script>
-            let counter = 0;
+            let counter = 0; // checkes if the selected img is the first one or the second one 
             let firstImg = {
                 id1:"0",
                 src1:"ddz"
@@ -42,22 +42,21 @@
                 id2:"0",
                 src2:"ddz"
             };
-            let transVar;
-            let listItems = document.getElementsByTagName('li');
+            let transVar = "";
             function swapImg(a)
             {
                 if(counter==0)
                 {
                     firstImg.id1 = a;
-                    firstImg.src1 = listItems[firstImg.id1-1].src;
+                    firstImg.src1 = document.getElementById(a).src;
                     counter++;
                 }
                 
                 else{
                     secondImg.id2 = a;
-                    secondImg.src2 = listItems[secondImg.id2-1].src;
+                    secondImg.src2 = document.getElementById(a).src;
 
-                    transVar = firstImg.src;
+                    transVar = firstImg.src1;
                     document.getElementById(firstImg.id1).src = secondImg.src2;
                     document.getElementById(secondImg.id2).src = transVar; 
                     counter = 0;
