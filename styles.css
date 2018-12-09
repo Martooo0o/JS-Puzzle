@@ -1,0 +1,77 @@
+*
+{
+    margin:0;
+}
+#Text1, #Text2{
+    width:50%;
+    margin:0 auto;
+    float:left;          
+}
+h2{
+    text-align: center;
+}
+#counterDiv
+{
+    position: absolute;
+    width: 100%;
+    text-align:center;
+
+}
+#Puzzle, #Original{
+    margin: 20px;
+    display:block;
+    width:612px;
+    height:349.08px;
+    padding:0px;
+    background: black;
+    border:5px solid purple;
+    float:left;
+}
+#Original
+{
+    float: right;
+}
+#Original img{
+    width:608px;
+    height:345.08px;
+    margin:2px;
+}
+
+ul{
+    list-style-type: none;
+
+    margin:0;
+    padding:0;
+}
+li{
+    width:200px;
+    height: 112.36px;
+    padding:0px;
+    margin:2px;
+    float:left;
+}
+li img{
+    width:200px;
+    height: 112.36px;
+}
+li:nth-child(3n+1){
+    clear:left;
+}
+#winner
+{
+    font-size: 75px;
+    text-align: center;
+}
+#refresh{
+    margin:0;
+    padding:0;
+    display:block;
+    clear:both;
+    margin: 0 auto;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
